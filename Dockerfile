@@ -1,4 +1,4 @@
-FROM ubuntu 
+FROM ubuntu as builder
 
 RUN apt-get update
 RUN apt-get install -y curl
@@ -6,10 +6,18 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get upgrade -y
 RUN apt-get install -y nodejs
 
-COPY package*.json /node-app/.
+WORKDIR /node-app
 
-RUN cd node-app && npm install
+COPY package*.json .
 
-COPY . /node-app/.
+RUN npm install
 
-CMD [ "node", "node-app/index.js" ]
+COPY . .
+
+FROM node as runner
+
+WORKDIR /node-app
+
+COPY --from=builder node-app/ .
+
+ENTRYPOINT [ "node", "index.js" ]
