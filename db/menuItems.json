@@ -1,0 +1,47 @@
+[
+  {
+    "short_name": "first short name",
+    "name": "first name",
+    "small_portion_name": "first small portion name",
+    "large_portion_name": "first large_portion_name",
+    "price_large": 525,
+    "description": "first description",
+    "category": "category"
+  },
+  {
+    "short_name": "second short name",
+    "name": "second name",
+    "small_portion_name": "second small portion name",
+    "large_portion_name": "second large_portion_name",
+    "price_large": 525,
+    "description": "second description",
+    "category": "category"
+  },
+  {
+    "short_name": "third short name",
+    "name": "third name",
+    "small_portion_name": "third small portion name",
+    "large_portion_name": "third large_portion_name",
+    "price_large": 525,
+    "description": "third description",
+    "category": "category"
+  },
+  {
+    "short_name": "forth short name",
+    "name": "forth name",
+    "small_portion_name": "forth small portion name",
+    "large_portion_name": "forth large_portion_name",
+    "price_large": 525,
+    "description": "forth description",
+    "category": "category"
+  },
+  {
+    "short_name": "fifth short name",
+    "name": "fifth name",
+    "small_portion_name": "fifth small portion name",
+    "large_portion_name": "fifth large_portion_name",
+    "price_large": 525,
+    "description": "fifth description",
+    "category": "none"
+  }
+]

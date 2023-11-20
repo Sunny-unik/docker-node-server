@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const categories = require("./db/categories.json");
+const menuItems = require("./db/menuItems.json");
 require("dotenv").config();
 const port = process.env.PORT || 4000;
 
@@ -7,8 +9,22 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello world. :-)" });
 });
 
-app.get("/health", (req, res) => {
-  res.status(200).send("All good");
+app.get("/categories", (req, res) => res.json(categories));
+
+app.get("/menu-items", (req, res) => {
+  const { category } = req.query;
+  if (!category) {
+    const error = {
+      message: "Category field is required",
+      instruction: "Pass category in query params",
+    };
+    res.status(400).json(error);
+  }
+  const selectedMenuItems = menuItems.filter((e) => e.category === category);
+  const selectedCategory = categories.find((e) => e.name === category);
+  res.json({ menuItems: selectedMenuItems, category: selectedCategory });
 });
+
+app.get("/health", (req, res) => res.status(200).send("OK"));
 
 app.listen(port, () => console.log("Server start on http://localhost:" + port));
