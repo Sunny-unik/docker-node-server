@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 const categories = require("./db/categories.json");
 const menuItems = require("./db/menuItems.json");
+const cors = require("cors");
 require("dotenv").config();
 const port = process.env.PORT || 4000;
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello world. :-)" });
@@ -21,8 +24,8 @@ app.get("/menu-items", (req, res) => {
     res.status(400).json(error);
   }
   const selectedMenuItems = menuItems.filter((e) => e.category === category);
-  const selectedCategory = categories.find((e) => e.name === category);
-  res.json({ menuItems: selectedMenuItems, category: selectedCategory });
+  const selectedCategory = categories.find((e) => e.short_name === category);
+  res.json({ menu_items: selectedMenuItems, category: selectedCategory });
 });
 
 app.get("/health", (req, res) => res.status(200).send("OK"));

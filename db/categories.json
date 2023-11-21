@@ -1,12 +1,12 @@
 [
   {
-    "short_name": "category short name",
-    "name": "category",
+    "short_name": "category",
+    "name": "long category",
     "special_instructions": "category special_instructions"
   },
   {
-    "short_name": "another category short name",
-    "name": "none",
+    "short_name": "none",
+    "name": "long none",
     "special_instructions": "another category special_instructions"
   }
 ]
