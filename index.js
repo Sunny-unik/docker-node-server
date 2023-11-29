@@ -6,7 +6,11 @@ const cors = require("cors");
 require("dotenv").config();
 const port = process.env.PORT || 4000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CORS_ALLOWED_ORIGIN || "https://sunny-unik.github.io",
+  })
+);
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello world. :-)" });
