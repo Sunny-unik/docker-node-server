@@ -3,18 +3,14 @@ const app = express();
 const categories = require("./db/categories.json");
 const menuItems = require("./db/menuItems.json");
 const cors = require("cors");
+
 require("dotenv").config();
 const port = process.env.PORT || 4000;
+const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS || "[]";
 
-app.use(
-  cors({
-    origin: process.env.CORS_ALLOWED_ORIGIN || "https://sunny-unik.github.io",
-  })
-);
+app.use(cors({ origin: JSON.parse(allowedOrigins) }));
 
-app.get("/", (req, res) => {
-  res.json({ message: "Hello world. :-)" });
-});
+app.get("/", (req, res) => res.json({ message: "Hello world. :-)" }));
 
 app.get("/categories", (req, res) => res.json(categories));
 
