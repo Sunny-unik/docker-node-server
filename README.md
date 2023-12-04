@@ -4,6 +4,8 @@
 
 > For learning purposes build a basic node.js server setup inside a docker container.
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Sunny-unik/docker-node-server)
+
 </div>
 
 ## Pull Image
