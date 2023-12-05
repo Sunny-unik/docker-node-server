@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: docker build -t node-in-docker .
+        run: docker build -t ghcr.io/sunny-unik/node-in-docker .
 
       - name: Push Docker image
-        run: docker push ghcr.io/sunny-unik/node-in-docker:latest
+        run: docker push ghcr.io/sunny-unik/node-in-docker
 
       - name: Deploy Docker image to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
