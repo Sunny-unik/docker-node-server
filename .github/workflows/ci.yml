@@ -1,0 +1,25 @@
+name: Deploy Docker image to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t sunnyunik/node-in-ubuntu .
+
+      - name: Push Docker image
+        run: docker push sunnyunik/node-in-ubuntu:latest
+
+      - name: Deploy Docker image to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .
