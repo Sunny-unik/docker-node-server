@@ -1,4 +1,4 @@
-name: Deploy Docker image to GitHub Pages
+name: Push Docker image to Github Packages (GHCR)
 
 on:
   push:
@@ -6,7 +6,8 @@ on:
       - master
 
 jobs:
-  build-and-deploy:
+  packaging:
+    permissions: write-all
     runs-on: ubuntu-latest
 
     steps:
@@ -16,10 +17,8 @@ jobs:
       - name: Build Docker image
         run: docker build -t ghcr.io/sunny-unik/node-in-docker .
 
+      - name: Login to GitHub Container Registry
+        run: docker login ghcr.io -u Sunny-unik --password ${{ secrets.GITHUB_TOKEN }}
+
       - name: Push Docker image
         run: docker push ghcr.io/sunny-unik/node-in-docker
-
-      - name: Deploy Docker image to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: .
