@@ -2,3 +2,9 @@
 node_modules
 .gitignore
 LICENSE
+README.md
+.git
+.github
+Dockerfile
+.dockerignore
+.env.example
