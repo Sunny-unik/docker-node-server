@@ -11,11 +11,12 @@
 
 ## Pull Image
 
-This image is available on [hub.docker.com](https://hub.docker.com). You can pull this image using `docker pull sunnyunik/node-in-ubuntu:tagname`
+This image is available on [hub.docker.com](https://hub.docker.com). You can pull this image using `docker pull sunnyunik/node-in-ubuntu:latest`
 
 ## 🤝 Contributing
 
-We encourage you to contribute to docker-node-server. Feel free to start a discussion.
+We encourage you to contribute to docker-node-server. All contributors are required to abide by our [Code of Conduct](/docs/Code-of-conduct.md). Please check out the [Contributing guide](/docs/Contributing.md) for guidelines about how to proceed with your contribution.
+Feel free to start a discussion.
 
 # Deployment
 
