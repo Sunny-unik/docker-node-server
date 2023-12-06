@@ -5,6 +5,7 @@
 > For learning purposes build a basic node.js server setup inside a docker container.
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Sunny-unik/docker-node-server)
+[![Push Docker image to GHCR & Docker Hub](https://github.com/Sunny-unik/docker-node-server/actions/workflows/ci.yml/badge.svg)](https://github.com/Sunny-unik/docker-node-server/actions/workflows/ci.yml)
 
 </div>
 
